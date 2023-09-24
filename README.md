@@ -1,24 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application consist of one endpoint to do registration for an exam at:
+```
+POST /api/v1/registrations
 
-Things you may want to cover:
+// Payload(raw json):
+// {
+//    "first_name": "John",
+//    "last_name": "Doe",
+//    "phone_number": "9221127774",
+//    "college_id": 1,
+//    "exam_id": 1,
+//    "start_time": "2023-10-4 09:00:00"
+//
+//}
+```
 
-* Ruby version
+#### Prerequisites
+* Ruby 3.1.2
+* Postgresql 14.9
+* Rails 7
 
-* System dependencies
+#### To load the dependencies run:
+```
+bundle install
+```
 
-* Configuration
+#### Database
+```
+// Create a user named codehall with password codehall on postgresql with createdb permission
+// To create and initialise database run:
+rake db:create db:migrate db:seed
+```
 
-* Database creation
+#### Run the application
+```
+rails server
+```
 
-* Database initialization
+#### Specs
+```
+// Make sure test_db is migrated and just run:
+rspec
+```
 
-* How to run the test suite
+##### Note: Added the ApiRequest Logs for the bonus
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## That's All, Folks!
